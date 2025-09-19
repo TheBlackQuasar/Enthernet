@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: xray
+    env: docker
+    plan: free
+    autoDeploy: true
+    buildCommand: ""
+    startCommand: "bash entrypoint.sh"
+    envVars: []
+    healthCheckPath: /
+    disk:
+      name: data
+      mountPath: /data
+      sizeGB: 1
