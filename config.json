@@ -1,0 +1,33 @@
+{
+  "log": { "loglevel": "warning" },
+  "inbounds": [
+    {
+      "port": 10000,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          { "id": "c7c06437-6b0a-4a7c-a0d0-8b6fc8f9e950", "level": 0 }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": { "path": "/ws" }
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": ["http", "tls"]
+      }
+    }
+  ],
+  "outbounds": [
+    { "protocol": "freedom" }
+  ],
+  "fallbacks": [
+    {
+      "alpn": "http/1.1",
+      "dest": 40080,
+      "xver": 1
+    }
+  ]
+} 
